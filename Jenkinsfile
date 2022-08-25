@@ -7,7 +7,7 @@ pipeline {
     stages {
         stage("Build") {
             steps {
-                sh "docker build -t nginx-test:v1 nginx"
+		def nginx = docker.build("nginx-test:${env.BUILD_ID}", "./nginx")
             }
         }
 	stage("Deploy") {
