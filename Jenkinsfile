@@ -12,7 +12,7 @@ pipeline {
         }
 	stage("Deploy") {
 	    steps {
-	        sh "docker run -d -p 8080:80 --restart=on-failure --name nginx nginx-test:v1"
+	        sh "docker run -d -p 8000:80 --restart=on-failure --name nginx nginx-test:v1"
 	    }
 	}
     }
