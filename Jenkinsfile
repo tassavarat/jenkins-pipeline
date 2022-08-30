@@ -1,3 +1,5 @@
+#!/usr/bin/env groovy
+
 pipeline {
     agent any
 
@@ -5,6 +7,7 @@ pipeline {
         stage("Build") {
             steps {
                 script {
+                    git "https://github.com/tassavarat/jenkins-pipeline.git"
                     def nginx_image = docker.build("nginx_image:${env.BUILD_ID}", "./nginx")
                 }
             }
