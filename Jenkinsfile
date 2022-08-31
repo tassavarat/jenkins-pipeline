@@ -6,7 +6,6 @@ pipeline {
     stages {
         stage("Build") {
             steps {
-                git "https://github.com/tassavarat/jenkins-pipeline.git"
                 script {
                     def nginx_image = docker.build("nginx_image:${env.BUILD_ID}", "./nginx")
                 }
