@@ -13,7 +13,7 @@ pipeline {
         }
         stage("Deploy") {
             steps {
-                sh "docker run -d -p 8000:80 --restart=on-failure --name nginx nginx_image:${env.BUILD_ID}"
+                sh "docker run -d -p 8000:80 --restart=on-failure --name nginx nginx_image:${env.BUILD_ID} || docker start nginx"
             }
         }
     }
