@@ -13,3 +13,5 @@ reboot
 ```
 
 Finally, set up GitHub hook trigger for GITScm polling and we should be good to go.
+
+Deployed [example](http://ec2-18-144-168-103.us-west-1.compute.amazonaws.com:8000/).
